@@ -42,7 +42,6 @@ function setWeather(data, place) {
   const weekDays = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота']
   const hours = date.getHours()
   const minutes = `0${date.getMinutes()}`
-  const seconds = `0${date.getSeconds()}`
   const formattedTime = `${weekDays[day]} ${hours}:${minutes.substr(-2)}`
 
   locationEl.textContent = place
