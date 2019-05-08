@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather</title>
+    <link rel="shortcut icon" href="img/favicon-16x16.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaSAm4LjNg_SyeL_HHVc9RZx3m7FpY6mc&libraries=places"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="main-box">
+      <div class="location-box">
+        <div class="current-place" data-location>Чтобы узнать погоду, введите название города</div>
+        <div class="current-time" data-time></div>
+      </div>
+      <div class="weather-box">
+        <div class="main-info">
+          <div class="icon-box">
+            <canvas id="icon" width="70" height="70"></canvas>
+          </div>
+          <div class="current-temperature" data-temperature></div>
+        </div>
+        <div class="details">
+          <p>Вероятность осадков: <span data-precipitation>TBD</span></p>
+          <p>Влажность: <span data-humidity>TBD</span></p>
+          <p>Ветер: <span data-wind>TBD</span></p>
+        </div>
+      </div>
+      <div class="forecast-box">
+        <!--  -->
+      </div>
+      <div class="search-box">
+        <input type="text" class="city-search" data-city-search placeholder="Введите название города">
+      </div>
+    </div>
+  </body>
+</html>
