@@ -37,12 +37,12 @@ icon.set('icon', 'clear-day')
 icon.play()
 
 function setWeather(data, place) {
-  const date = new Date(data.time * 1000)
-  const day = date.getDay()
-  const weekDays = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота']
-  const hours = date.getHours()
-  const minutes = `0${date.getMinutes()}`
-  const formattedTime = `${weekDays[day]} ${hours}:${minutes.substr(-2)}`
+  const date = new Date(data.time * 1000),
+        day = date.getDay(),
+        weekDays = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+        hours = date.getHours(),
+        minutes = `0${date.getMinutes()}`,
+        formattedTime = `${weekDays[day]} ${hours}:${minutes.substr(-2)}`
 
   locationEl.textContent = place
   timeEl.textContent = formattedTime
