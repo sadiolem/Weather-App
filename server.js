@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-const DarkSkyAPI_KEY = process.env.DarkSkyAPI_KEY;
+// const DarkSkyAPI_KEY = process.env.DarkSkyAPI_KEY;
 const axios = require('axios');
 const express = require('express');
 const app = express();
