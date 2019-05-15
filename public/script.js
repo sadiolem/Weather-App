@@ -31,12 +31,10 @@ const temperatureEl = document.querySelector('[data-temperature]');
 const precipitationEl = document.querySelector('[data-precipitation]');
 const humidityEl = document.querySelector('[data-humidity]');
 const windEl = document.querySelector('[data-wind]');
-const icon = new Skycons({
-  color: '#263238'
-});
+const skycons = new Skycons({color: '#263238'});
 
-icon.set('icon', 'clear-day');
-icon.play();
+skycons.set('icon', 'clear-day');
+skycons.play();
 
 function setWeather(data, place) {
   const date = new Date(data.time * 1000);
@@ -53,6 +51,6 @@ function setWeather(data, place) {
   humidityEl.textContent = `${data.humidity * 100}%`;
   windEl.textContent = data.windSpeed + ' м/с';
 
-  icon.set('icon', data.icon);
-  icon.play();
+  skycons.set('icon', data.icon);
+  skycons.play();
 }
