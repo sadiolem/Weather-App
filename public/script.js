@@ -46,10 +46,10 @@ function setWeather(data, place) {
 
   locationEl.textContent = place;
   timeEl.textContent = formattedTime;
-  temperatureEl.innerHTML = data.temperature + '<span class="cels">°C</span>';
+  temperatureEl.innerHTML = data.temperature.toFixed(1) + '<span class="cels">°C</span>';
   precipitationEl.textContent = `${data.precipProbability * 100}%`;
-  humidityEl.textContent = `${data.humidity * 100}%`;
-  windEl.textContent = data.windSpeed + ' м/с';
+  humidityEl.textContent = `${data.humidity.toFixed(1) * 100}%`;
+  windEl.textContent = data.windSpeed.toFixed(1) + ' м/с';
 
   skycons.set('icon', data.icon);
   skycons.play();
