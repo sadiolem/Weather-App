@@ -33,7 +33,7 @@ const precipitationEl = document.querySelector('[data-precipitation]');
 const humidityEl = document.querySelector('[data-humidity]');
 const windEl = document.querySelector('[data-wind]');
 
-// forecast data for several days
+// forecast data for two days
 const temperatureEl_1 = document.querySelector('[data-temperature-1]');
 const temperatureEl_2 = document.querySelector('[data-temperature-2]');
 
