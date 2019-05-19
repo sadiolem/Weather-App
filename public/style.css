@@ -19,7 +19,7 @@ body {
 
 .main-box {
   width: 90%;
-  max-width: 630px;
+  max-width: 600px;
   min-height: 370px;
   padding: 20px;
 
@@ -76,7 +76,7 @@ body {
 }
 
 .details {
-  padding-right: 80px;
+  padding-right: 50px;
 }
 
 .forecast-box {
