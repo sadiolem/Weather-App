@@ -63,3 +63,16 @@ function setWeather(data, place) {
   skycons.set('icon', data.currently.icon);
   skycons.play();
 }
+
+const date = new Date();
+
+if (date.getHours() >= 4 && date.getHours() < 6) {
+  document.body.style.backgroundImage = 'url("https://i.imgur.com/LDrziA8.png")';
+} else if (date.getHours() >= 6 && date.getHours() < 17) {
+  document.body.style.backgroundImage = 'url("https://i.imgur.com/NmEbOyt.png")';
+} else if (date.getHours() >= 17 && date.getHours() < 23) {
+  document.body.style.backgroundImage = 'url("https://i.imgur.com/gb6EyHk.png")';
+}
+else {
+  document.body.style.backgroundImage = 'url("https://i.imgur.com/K5PvLLE.png")';
+}
