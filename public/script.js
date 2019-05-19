@@ -21,7 +21,7 @@ searchBox.addListener('places_changed', () => {
     })
     .then(res => res.json())
     .then(data => {
-      setWeather(data, place.formatted_address)
+      setWeather(data, place.formatted_address);
     });
 });
 
@@ -46,7 +46,7 @@ function setWeather(data, place) {
 
   locationEl.textContent = place;
   timeEl.textContent = formattedTime;
-  temperatureEl.innerHTML = data.temperature.toFixed(1) + '<span class="cels">°C</span>';
+  temperatureEl.innerHTML = data.temperature.toFixed(0) + '<span class="cels">°C</span>';
   precipitationEl.textContent = `${data.precipProbability * 100}%`;
   humidityEl.textContent = `${data.humidity.toFixed(1) * 100}%`;
   windEl.textContent = data.windSpeed.toFixed(1) + ' м/с';
