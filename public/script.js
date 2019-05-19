@@ -25,19 +25,25 @@ searchBox.addListener('places_changed', () => {
     });
 });
 
+// today data
 const locationEl = document.querySelector('[data-location]');
 const timeEl = document.querySelector('[data-time]');
 const temperatureEl = document.querySelector('[data-temperature]');
 const precipitationEl = document.querySelector('[data-precipitation]');
 const humidityEl = document.querySelector('[data-humidity]');
 const windEl = document.querySelector('[data-wind]');
+
+// forecast data for several days
+const temperatureEl_1 = document.querySelector('[data-temperature-1]');
+const temperatureEl_2 = document.querySelector('[data-temperature-2]');
+
 const skycons = new Skycons({color: '#263238'});
 
 skycons.set('icon', 'clear-day');
 skycons.play();
 
 function setWeather(data, place) {
-  const date = new Date(data.time * 1000);
+  const date = new Date(data.currently.time * 1000);
   const day = date.getDay();
   const weekDays = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
   const hours = date.getHours();
@@ -46,11 +52,16 @@ function setWeather(data, place) {
 
   locationEl.textContent = place;
   timeEl.textContent = formattedTime;
-  temperatureEl.innerHTML = data.temperature.toFixed(0) + '<span class="cels">°C</span>';
-  precipitationEl.textContent = `${data.precipProbability * 100}%`;
-  humidityEl.textContent = `${data.humidity.toFixed(1) * 100}%`;
-  windEl.textContent = data.windSpeed.toFixed(1) + ' м/с';
+  temperatureEl.innerHTML = data.currently.temperature.toFixed(0) + '<span class="cels">°C</span>';
+  precipitationEl.textContent = `${data.currently.precipProbability * 100}%`;
+  humidityEl.textContent = `${data.currently.humidity.toFixed(1) * 100}%`;
+  windEl.textContent = data.currently.windSpeed.toFixed(1) + ' м/с';
 
-  skycons.set('icon', data.icon);
+  temperatureEl_1.innerHTML += data.daily.data[1].temperatureMax.toFixed(0) + '°/';
+  temperatureEl_1.innerHTML += data.daily.data[1].temperatureMin.toFixed(0) + '°';
+  temperatureEl_2.innerHTML += data.daily.data[2].temperatureMax.toFixed(0) + '°/';
+  temperatureEl_2.innerHTML += data.daily.data[2].temperatureMin.toFixed(0) + '°';
+
+  skycons.set('icon', data.currently.icon);
   skycons.play();
 }

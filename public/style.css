@@ -86,13 +86,22 @@ body {
 }
 
 .day-box {
-  width: 25%;
+  width: 50%;
+
+  text-align: center;
 
   border-right: 1px solid #dfe1e5;
 }
 
 .day-box:last-child {
   border-right: none;
+}
+
+.forecast-temp {
+  margin: 0;
+
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .search-box {
