@@ -25,7 +25,6 @@ searchBox.addListener('places_changed', () => {
     });
 });
 
-// today data
 const locationEl = document.querySelector('[data-location]');
 const timeEl = document.querySelector('[data-time]');
 const temperatureEl = document.querySelector('[data-temperature]');
@@ -33,7 +32,6 @@ const precipitationEl = document.querySelector('[data-precipitation]');
 const humidityEl = document.querySelector('[data-humidity]');
 const windEl = document.querySelector('[data-wind]');
 
-// forecast data for two days
 const temperatureEl_1 = document.querySelector('[data-temperature-1]');
 const temperatureEl_2 = document.querySelector('[data-temperature-2]');
 
