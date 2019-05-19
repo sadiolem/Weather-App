@@ -80,8 +80,19 @@ body {
 }
 
 .forecast-box {
+  display: flex;
   min-height: 90px;
   padding-top: 10px;
+}
+
+.day-box {
+  width: 25%;
+
+  border-right: 1px solid #dfe1e5;
+}
+
+.day-box:last-child {
+  border-right: none;
 }
 
 .search-box {
