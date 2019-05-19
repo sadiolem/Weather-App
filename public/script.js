@@ -57,9 +57,9 @@ function setWeather(data, place) {
   humidityEl.textContent = `${data.currently.humidity.toFixed(1) * 100}%`;
   windEl.textContent = data.currently.windSpeed.toFixed(1) + ' м/с';
 
-  temperatureEl_1.innerHTML += data.daily.data[1].temperatureMax.toFixed(0) + '°/';
+  temperatureEl_1.innerHTML = data.daily.data[1].temperatureMax.toFixed(0) + '°/';
   temperatureEl_1.innerHTML += data.daily.data[1].temperatureMin.toFixed(0) + '°';
-  temperatureEl_2.innerHTML += data.daily.data[2].temperatureMax.toFixed(0) + '°/';
+  temperatureEl_2.innerHTML = data.daily.data[2].temperatureMax.toFixed(0) + '°/';
   temperatureEl_2.innerHTML += data.daily.data[2].temperatureMin.toFixed(0) + '°';
 
   skycons.set('icon', data.currently.icon);
