@@ -59,7 +59,7 @@ function setWeather(data, place) {
   const windEl = document.querySelector('[data-wind]');
 
   temperatureEl.innerHTML = data.currently.temperature.toFixed(0) + '<span class="cels">°C</span>';
-  precipitationEl.textContent = `${data.currently.precipProbability * 100}%`;
+  precipitationEl.textContent = `${data.currently.precipProbability.toFixed(1) * 100}%`;
   humidityEl.textContent = `${data.currently.humidity.toFixed(1) * 100}%`;
   windEl.textContent = data.currently.windSpeed.toFixed(1) + ' м/с';
 
