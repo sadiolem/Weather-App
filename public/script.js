@@ -80,12 +80,13 @@ const setWeather = (data, place) => {
 const setBackgroundImg = () => {
   // set background img depending on the time of day
   const date = new Date();
+  const time = date.getHours();
 
-  if (date.getHours() >= 4 && date.getHours() < 6) {
+  if (time >= 4 && time < 6) {
     document.body.style.backgroundImage = 'url("https://i.imgur.com/LDrziA8.png")';
-  } else if (date.getHours() >= 6 && date.getHours() < 17) {
+  } else if (time >= 6 && time < 17) {
     document.body.style.backgroundImage = 'url("https://i.imgur.com/NmEbOyt.png")';
-  } else if (date.getHours() >= 17 && date.getHours() < 23) {
+  } else if (time >= 17 && time < 23) {
     document.body.style.backgroundImage = 'url("https://i.imgur.com/gb6EyHk.png")';
   }
   else {
