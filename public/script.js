@@ -27,7 +27,7 @@ searchBox.addListener('places_changed', () => {
 
 const skycons = new Skycons({color: '#263238'});
 
-function setIcon() {
+const setIcon = () => {
   // set default icon
   skycons.set('icon', 'clear-day');
   skycons.play();
@@ -35,7 +35,7 @@ function setIcon() {
   
 setIcon();
 
-function setWeather(data, place) {
+const setWeather = (data, place) => {
   // set place
   const locationEl = document.querySelector('[data-location]');
 
@@ -77,7 +77,7 @@ function setWeather(data, place) {
   skycons.play();
 }
 
-function setBackgroundImg() {
+const setBackgroundImg = () => {
   // set background img depending on the time of day
   const date = new Date();
 
