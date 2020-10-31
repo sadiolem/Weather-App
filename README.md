@@ -2,10 +2,8 @@
 
 to use, follow these steps:
 
-1) open the console in the project folder
+1) npm i
 
-2) to install node_modules write in console: npm i
-
-3) to run the server: npm run nodeserv
+3) npm run nodeserv
 
 4) server will run on http://localhost:3000/
