@@ -6,7 +6,7 @@ searchBox.addListener('places_changed', () => {
   const latitude = place.geometry.location.lat();
   const longitude = place.geometry.location.lng();
 
-  if (place === null) return;
+  if (!place) return;
 
   fetch('/weather', {
       method: 'POST',
@@ -20,9 +20,7 @@ searchBox.addListener('places_changed', () => {
       })
     })
     .then(res => res.json())
-    .then(data => {
-      setWeather(data, place.formatted_address);
-    });
+    .then(data => setWeather(data, place.formatted_address));
 });
 
 const skycons = new Skycons({color: '#263238'});
@@ -88,8 +86,7 @@ const setBackgroundImg = () => {
     document.body.style.backgroundImage = 'url("https://i.imgur.com/NmEbOyt.png")';
   } else if (time >= 17 && time < 23) {
     document.body.style.backgroundImage = 'url("https://i.imgur.com/gb6EyHk.png")';
-  }
-  else {
+  } else {
     document.body.style.backgroundImage = 'url("https://i.imgur.com/K5PvLLE.png")';
   }
 }
